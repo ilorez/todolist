@@ -1,13 +1,31 @@
-import { getData, setData } from "../scripts/manageLocalStorage"
-function Today() {
-    setData('2023-08-25', "birthday")
-    let dataDate = getData('2023-08-25')
-    console.log(dataDate)
+import StatusTaskIcon from "../components/StatusTaskIcon"
+import TasksCard from "../components/TasksCard"
+import useStore from "../store"
 
+function Today() {
+    const ar = [
+        {
+            'id': 1,
+            'value': 'runnig',
+            'status': true,
+            'importance': 1
+        },
+        {
+            'id': 2,
+            'value': 'go to gym',
+            'status': false,
+            'importance': 2
+        },
+        {
+            'id': 3,
+            'value': 'playing football',
+            'status': false,
+            'importance': 3
+        }
+    ]
     return (
         <>
-            <h2 className="text-tdl_main-blue">I'm Today page</h2>
-
+            <TasksCard cardTitle="today" tasks={ar} />
         </>
     )
 }

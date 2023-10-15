@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #EDEDED !important;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+
+
+
+.active {
+    color: #27C289;
+}
+
+/* the add button style  */
+.add-button:hover {
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition-duration: 500ms;
+}
+
+.add-button:hover #path-icon-plus {
+    fill: #014d83;
+
+}
