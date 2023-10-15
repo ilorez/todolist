@@ -6,7 +6,7 @@ function Today() {
 
     return (
         <>
-            <h2>I'm Today page</h2>
+            <h2 className="text-tdl_main-blue">I'm Today page</h2>
 
         </>
     )

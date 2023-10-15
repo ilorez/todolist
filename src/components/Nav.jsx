@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function Nav() {
     return (
         <nav>
-            <Link to="/today">Today</Link>
-            <Link to="/tomorrow">Tomorrow</Link>
-            <Link to="/habits">Habits</Link>
+            <Link to="/tasks/today">Today</Link>
+            <Link to="/tasks/tomorrow">Tomorrow</Link>
+            <Link to="/tasks/habits">Habits</Link>
             <Link to="/history">History</Link>
         </nav>
     )

@@ -14,7 +14,7 @@ export default {
           'blue': '#0095FF',
           'green': '#27C289',
           'red': '#FF6E0A',
-          'brown': 'DD894F'
+          'brown': '#DD894F'
         }
       }
     },

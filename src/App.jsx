@@ -9,13 +9,17 @@ import Today from './pages/Today'
 import Tomorrow from './pages/Tomorrow'
 import Habits from './pages/Habits'
 import History from './pages/History'
+import TasksLayout from './layouts/TasksLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
-      <Route path='today' element={<Today />} />
-      <Route path='tomorrow' element={<Tomorrow />} />
-      <Route path='habits' element={<Habits />} />
+      <Route path='tasks' element={<TasksLayout />}>
+        <Route path='today' element={<Today />} />
+        <Route path='tomorrow' element={<Tomorrow />} />
+        <Route path='habits' element={<Habits />} />
+      </Route>
+
       <Route path='history' element={<History />} />
       <Route path='*' element={<NotFound />} />
     </Route>
