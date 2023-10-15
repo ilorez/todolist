@@ -1,22 +1,24 @@
 
-function getData(date) {
+function getData(item) {
     try {
-        const data = JSON.parse(localStorage.getItem(date))
+        const data = JSON.parse(localStorage.getItem(item))
         return data
     } catch (err) {
-        console.error("the date key not found", err)
+        console.error("the item not found", err)
         return false
     }
 }
 
-function setData(date, data) {
+function setData(item, data) {
     try {
-        localStorage.setItem(`${date}`, JSON.stringify(data))
+        localStorage.setItem(`${item}`, JSON.stringify(data))
         return true
     } catch (err) {
         console.error(err)
         return false
     }
 }
+
+
 
 export { getData, setData }

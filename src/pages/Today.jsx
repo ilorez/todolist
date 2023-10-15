@@ -1,28 +1,12 @@
 import StatusTaskIcon from "../components/StatusTaskIcon"
 import TasksCard from "../components/TasksCard"
+import getFormatedDate from "../scripts/getDate"
 import useStore from "../store"
 
 function Today() {
-    const ar = [
-        {
-            'id': 1,
-            'value': 'runnig',
-            'status': true,
-            'importance': 1
-        },
-        {
-            'id': 2,
-            'value': 'go to gym',
-            'status': false,
-            'importance': 2
-        },
-        {
-            'id': 3,
-            'value': 'playing football',
-            'status': false,
-            'importance': 3
-        }
-    ]
+    const { tasks, setTask } = useStore()
+    const today = getFormatedDate(0)
+    const ar = tasks[today] === undefined ? false : tasks[today]
     return (
         <>
             <TasksCard cardTitle="today" tasks={ar} />
