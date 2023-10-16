@@ -1,16 +1,16 @@
 import { Button, Dialog, Flex, Select, Text, TextField } from "@radix-ui/themes";
 import Task from "../classes/task";
 import { useLocation } from "react-router-dom";
+import getFormatedDate from "../scripts/getDate";
+import useStore from "../store";
 function AddTaskPopDialog() {
+    const { setTask } = useStore()
     const loaction = useLocation()
     function handleSubmit(event) {
         event.preventDefault()
         let data = Object.fromEntries(new FormData(event.currentTarget))
         let taskLocation = loaction.pathname.split("/").pop()
-        // const isTomorrow = taskLocation === "tomorrow" ? 1:0 
-        const task = new Task(data.task, data.imporatance)
-        //TODO add task to the correct pace based on taskLocaton
-        console.log(task)
+        setTask(taskLocation, data.task, data.importance)
     }
     return (
         <Dialog.Root>
@@ -41,12 +41,12 @@ function AddTaskPopDialog() {
                             <Text as="div" size="2" mb="1" weight="bold">
                                 Importance
                             </Text>
-                            <Select.Root defaultValue="normal" name="imporatance">
+                            <Select.Root defaultValue="normal" name="importance">
                                 <Select.Trigger />
                                 <Select.Content >
                                     <Select.Item value="urgent">Urgent</Select.Item>
                                     <Select.Item value="normal">Normal</Select.Item>
-                                    <Select.Item value="non-urgen">Non-urgen</Select.Item>
+                                    <Select.Item value="non-urgent">Non-urgent</Select.Item>
                                 </Select.Content>
                             </Select.Root>
                         </label>

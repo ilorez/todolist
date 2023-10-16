@@ -4,12 +4,14 @@ import getFormatedDate from "../scripts/getDate"
 import useStore from "../store"
 
 function Today() {
-    const { tasks, setTask } = useStore()
+    const { tasks } = useStore()
     const today = getFormatedDate(0)
-    const ar = tasks[today] === undefined ? false : tasks[today]
+
+    const todayTasks = tasks[today] === null || undefined ? false : tasks[today]
+
     return (
         <>
-            <TasksCard cardTitle="today" tasks={ar} />
+            <TasksCard cardTitle="today" tasks={todayTasks} />
         </>
     )
 }
