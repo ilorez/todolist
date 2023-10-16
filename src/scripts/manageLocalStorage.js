@@ -19,6 +19,26 @@ function setData(key, data) {
     }
 }
 
+function getNormalData(key) {
+    try {
+        const data = localStorage.getItem(key)
+        return data
+    } catch (err) {
+        console.error("the item not found", err)
+        return false
+    }
+}
+
+function setNormalData(key, data) {
+    try {
+        localStorage.setItem(`${key}`, `${data}`)
+        return true
+    } catch (err) {
+        console.error(err)
+        return false
+    }
+}
 
 
-export { getData, setData }
+
+export { getData, setData, getNormalData, setNormalData }
