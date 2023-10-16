@@ -7,7 +7,9 @@ function TasksCard({ cardTitle, tasks }) {
         'non-urgent': "green"
     }
     let fill = !(cardTitle === 'today' || cardTitle === 'pending')
-
+    const handleTaskStatus = (task_id) => {
+        console.log(task_id)
+    }
     return (
         <div className="flex flex-col first-letter:uppercase bg-background-light w-full p-4 pb-10 shadow-md rounded-lg gap-3">
             <h2 className="first-letter:uppercase font-bold">{cardTitle} Tasks </h2>
@@ -16,7 +18,14 @@ function TasksCard({ cardTitle, tasks }) {
                 {
                     tasks &&
                     tasks.map((task) => (
-                        <li key={task.id} className="flex gap-2"><span><StatusTaskIcon color={importances[task.importance]} status={task.status} fill={fill} /></span> <span className={(task.status ? "text-gray-500 line-through first-letter:uppercase" : "first-letter:uppercase")}>{task.value}</span></li>
+                        <li key={task.id} className="flex gap-2">
+                            <span onClick={() => handleTaskStatus(task.id)}>
+                                <StatusTaskIcon color={importances[task.importance]} status={task.status} fill={fill} />
+                            </span>
+                            <span className={(task.status ? "text-gray-500 line-through first-letter:uppercase" : "first-letter:uppercase")}>
+                                {task.value}
+                            </span>
+                        </li>
                     ))
                 }
             </div>

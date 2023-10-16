@@ -1,10 +1,9 @@
 class Task {
-    static count = 0
     constructor(value, importance) {
         this.value = value
         this.importance = importance
         this.status = false
-        this.id = ++this.constructor.count;
+        this.id = `id_${(new Date()).getTime()}`;
     }
     updateValue(newValue) {
         this.value = newValue

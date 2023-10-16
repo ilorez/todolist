@@ -1,7 +1,7 @@
 
-function getData(item) {
+function getData(key) {
     try {
-        const data = JSON.parse(localStorage.getItem(item))
+        const data = JSON.parse(localStorage.getItem(key))
         return data
     } catch (err) {
         console.error("the item not found", err)
@@ -9,9 +9,9 @@ function getData(item) {
     }
 }
 
-function setData(item, data) {
+function setData(key, data) {
     try {
-        localStorage.setItem(`${item}`, JSON.stringify(data))
+        localStorage.setItem(`${key}`, JSON.stringify(data))
         return true
     } catch (err) {
         console.error(err)
