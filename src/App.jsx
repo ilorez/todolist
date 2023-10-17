@@ -15,7 +15,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route path='tasks' element={<TasksLayout />}>
-        <Route path='today' element={<Today />} />
+        <Route index path='today' element={<Today />} />
         <Route path='tomorrow' element={<Tomorrow />} />
         <Route path='habits' element={<Habits />} />
       </Route>

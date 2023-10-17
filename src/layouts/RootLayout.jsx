@@ -1,8 +1,17 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
+import { useEffect } from "react";
 
 function RootLayout() {
+    const location = useLocation()
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (location.pathname === "/") {
+
+            navigate("/tasks/today");
+        }
+    })
     return (
         <div className="flex flex-col gap-6 min-h-full">
             <header className="bg-background-light py-1 px-2 m-2 rounded-lg shadow-md ">
