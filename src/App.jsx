@@ -23,7 +23,7 @@ const router = createBrowserRouter(
       <Route path='history' element={<History />} />
       <Route path='*' element={<NotFound />} />
     </Route>
-  )
+  ), { basename: import.meta.env.DEV ? '/' : '/react-vite-gh-pages/' }
 )
 function App() {
   return (
