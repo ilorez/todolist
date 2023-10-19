@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Nav() {
     return (
         <nav className="flex justify-between items-center">
-            <NavLink to="/todolist/tasks/today">
+            <NavLink to="/tasks/today">
                 <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.68616 13.5703C3.95295 8.16976 8.16975 3.95295 13.5703 2.68615C17.4706 1.77128 21.5294 1.77128 25.4298 2.68615C30.8303 3.95295 35.047 8.16976 36.3138 13.5703C37.2287 17.4706 37.2287 21.5294 36.3138 25.4298C35.047 30.8303 30.8303 35.047 25.4298 36.3139C21.5294 37.2287 17.4706 37.2287 13.5703 36.3139C8.16975 35.047 3.95295 30.8303 2.68616 25.4298C1.77128 21.5294 1.77128 17.4706 2.68616 13.5703Z" stroke="#0095FF" strokeWidth="3.75" />
                     <path d="M2.68616 13.5703C1.77128 17.4707 1.77128 21.5295 2.68616 25.4299C3.95295 30.8304 8.16975 35.0471 13.5703 36.3139C17.4706 37.2288 21.5294 37.2288 25.4298 36.3139C30.8303 35.0471 35.047 30.8304 36.3138 25.4299C37.2287 21.5295 37.2287 17.4707 36.3138 13.5703C35.047 8.1698 30.8303 3.95299 25.4298 2.68619" stroke="#363853" strokeWidth="3.75" strokeLinecap="round" />
@@ -11,10 +11,10 @@ function Nav() {
                 </svg>
             </NavLink>
             <div className="flex gap-3">
-                <NavLink to="/todolist/tasks/today">Today</NavLink>
-                <NavLink to="/todolist/tasks/tomorrow">Tomorrow</NavLink>
-                <NavLink to="/todolist/tasks/habits">Habits</NavLink>
-                <NavLink to="/todolist/history">History</NavLink>
+                <NavLink to="/tasks/today">Today</NavLink>
+                <NavLink to="/tasks/tomorrow">Tomorrow</NavLink>
+                <NavLink to="/tasks/habits">Habits</NavLink>
+                <NavLink to="/history">History</NavLink>
             </div>
         </nav>
     )

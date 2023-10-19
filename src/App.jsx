@@ -13,7 +13,7 @@ import TasksLayout from './layouts/TasksLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/todolist' element={<RootLayout />}>
+    <Route path='/' element={<RootLayout />}>
       <Route path='tasks' element={<TasksLayout />}>
         <Route path='today' element={<Today />} />
         <Route path='tomorrow' element={<Tomorrow />} />
