@@ -1,16 +1,15 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import { useEffect } from "react";
 
 function RootLayout() {
     const location = useLocation()
+    const navigate = useNavigate();
     useEffect(() => {
-        if (location.pathname === "/todolist") {
+        if (location.pathname === "/") {
 
-            return (<Navigate to="/todolist/tasks/today" replace={true} />)
-
-
+            navigate("/tasks/today");
         }
     })
     return (

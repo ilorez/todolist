@@ -1,5 +1,5 @@
 import { Badge, Flex } from "@radix-ui/themes"
-import { Navigate, Outlet, useLocation } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import AddTaskPopDialog from "../components/AddTaskPopDialog"
 import useStore from "../store"
 import { useEffect } from "react"
@@ -8,10 +8,11 @@ import { useEffect } from "react"
 
 function TasksLayout() {
     const location = useLocation()
+    const navigate = useNavigate();
     useEffect(() => {
-        if (location.pathname === "/todolist/tasks") {
-            return (<Navigate to="/todolist/tasks/today" replace={true} />)
+        if (location.pathname === "/tasks") {
 
+            navigate("/tasks/today");
         }
     })
 
