@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function RootLayout() {
     const location = useLocation()
     useEffect(() => {
-        if (location.pathname === "/todolist") {
+        if (location.pathname === "/todolist/") {
 
             return (<Navigate to="/todolist/tasks/today" replace={true} />)
 
