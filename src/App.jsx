@@ -13,7 +13,7 @@ import TasksLayout from './layouts/TasksLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
+    <Route path='/todolist' element={<RootLayout />}>
       <Route path='tasks' element={<TasksLayout />}>
         <Route path='today' element={<Today />} />
         <Route path='tomorrow' element={<Tomorrow />} />
@@ -23,7 +23,7 @@ const router = createBrowserRouter(
       <Route path='history' element={<History />} />
       <Route path='*' element={<NotFound />} />
     </Route>
-  ), { basename: import.meta.env.DEV ? '/' : '/react-vite-gh-pages/' }
+  )
 )
 function App() {
   return (

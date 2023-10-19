@@ -5,7 +5,7 @@ function NotFound() {
         <div>
             <h2>404 Not Found</h2>
             <p>The page that you loking for not found </p>
-            <Link to="/tasks/today">Go Back to Homepage</Link>
+            <Link to="/todolist/tasks/today">Go Back to Homepage</Link>
         </div>
     )
 }

@@ -12,7 +12,7 @@ function TasksLayout() {
     useEffect(() => {
         if (location.pathname === "/tasks") {
 
-            navigate("/tasks/today");
+            navigate("/todolist/tasks/today");
         }
     })
 

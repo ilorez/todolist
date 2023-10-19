@@ -9,7 +9,7 @@ function RootLayout() {
     useEffect(() => {
         if (location.pathname === "/") {
 
-            navigate("/tasks/today");
+            navigate("/todolist/tasks/today");
         }
     })
     return (
